@@ -5,5 +5,6 @@ export default {
   // Server-side render by default, to enable SPA mode set this to `false`
   ssr: false, // disable runtime server rendering
   prerender: true, // pre-render all static routes
-  basename: "/", // base URL for the app
+  // basename needs to match the base in vite.config.ts for proper routing
+  basename: "/react-router-framework/build/client", 
 } satisfies Config;
