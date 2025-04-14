@@ -4,7 +4,9 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  base: "/react-router-framework/build/client/",
+  base: "/",
+  publicDir: false,
+  build: {},
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
   server: {
     host: true,
