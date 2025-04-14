@@ -1,0 +1,38 @@
+# 阶段 1: 安装开发依赖（用于构建）
+FROM node:20-alpine AS development-dependencies-env
+# 启用 corepack（确保 yarn 可用）
+RUN corepack enable
+COPY . /app
+WORKDIR /app
+# 安装所有依赖（包括 devDependencies）
+RUN yarn install --frozen-lockfile
+
+# 阶段 2: 仅安装生产依赖
+FROM node:20-alpine AS production-dependencies-env
+RUN corepack enable
+COPY ./package.json ./yarn.lock /app/
+WORKDIR /app
+# 仅安装生产依赖（忽略 devDependencies）
+RUN yarn install --production --frozen-lockfile
+
+# 阶段 3: 构建应用
+FROM node:20-alpine AS build-env
+RUN corepack enable
+COPY . /app/
+# 复用开发阶段的 node_modules（包含构建工具）
+COPY --from=development-dependencies-env /app/node_modules /app/node_modules
+WORKDIR /app
+# 执行构建命令
+RUN yarn build
+
+# 阶段 4: 生产环境镜像
+FROM node:20-alpine
+RUN corepack enable
+COPY ./package.json ./yarn.lock /app/
+# 复用生产依赖的 node_modules
+COPY --from=production-dependencies-env /app/node_modules /app/node_modules
+# 复制构建产物
+COPY --from=build-env /app/build /app/build
+WORKDIR /app
+# 启动命令
+CMD ["yarn", "start"]
