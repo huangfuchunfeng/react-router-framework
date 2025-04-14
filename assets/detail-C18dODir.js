@@ -1,0 +1,1 @@
+import{w as t}from"./with-props-D3AO8slx.js";import{l as e}from"./chunk-KNED5TY2-BWNdqSdz.js";const a=t(function(){return e.jsxs("div",{children:[e.jsx("h1",{children:"Detail Page"}),e.jsx("p",{children:"This is the detail page."})]})});export{a as default};
