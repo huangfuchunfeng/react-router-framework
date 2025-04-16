@@ -52,11 +52,11 @@ export default function Home() {
     <div className="bg-[#14161a] text-[#f2f2f2] min-h-screen p-6 antialiased relative">
       <header className="relative flex flex-col justify-center items-center gap-y-6">
         <img
-          src="/header-blur.webp"
+          src="header-blur.webp"
           className="blur-3xl block h-full w-full absolute object-cover object-center z-0"
           alt=""
         />
-        <img src="/header.webp" className="block max-w-[50%] z-1" alt="" />
+        <img src="header.webp" className="block max-w-[50%] z-1" alt="" />
         <div className="z-1 text-center">
           <h1 className="line-clamp-6 text-3xl break-all">Содержанки</h1>
           <div className="p-1">
@@ -125,10 +125,10 @@ export default function Home() {
                             <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
                               {activeSeasonIndex > se.id ||
                               (activeSeasonIndex === se.id && activeEpisodeIndex >= episode.id) ? (
-                                <img src="/button-play.svg" alt="" onClick={() => playVideo(se.id, episode.id)} />
+                                <img src="button-play.svg" alt="" onClick={() => playVideo(se.id, episode.id)} />
                               ) : (
                                 <img
-                                  src="/lock.svg"
+                                  src="lock.svg"
                                   alt=""
                                   className="w-20"
                                   onClick={() => lockVideo(se.id, episode.id)}
