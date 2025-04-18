@@ -1,8 +1,9 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, Suspense, useEffect, useState } from "react";
 import type { Route } from "./+types/home";
 import series from "./series.json";
 import { useNavigate } from "react-router";
 import { getOpenEpisodeNum, getSeasonEpisodes, getSkip } from "~/utils/seasonUtil";
+import { ImageWithSkeleton } from "~/components/Skeleton";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Содержанки" },
@@ -52,11 +53,12 @@ export default function Home() {
     <div className="bg-[#14161a] text-[#f2f2f2] min-h-screen p-6 antialiased relative">
       <header className="relative flex flex-col justify-center items-center gap-y-6">
         <img
-          src="header-blur.webp"
-          className="blur-3xl block h-full w-full absolute object-cover object-center z-0"
+          src="header.webp"
+          className="blur-3xl block h-full w-full absolute object-cover object-center z-0 transition-opacity duration-500"
           alt=""
         />
-        <img src="header.webp" className="block max-w-[50%] z-1" alt="" />
+        <ImageWithSkeleton src="header.webp" className="block w-[50%] z-1 aspect-[30/43]" alt="" />
+        {/* <img src="header.webp" className="block w-[50%] z-1 aspect-[30/43]" alt="" /> */}
         <div className="z-1 text-center">
           <h1 className="line-clamp-6 text-3xl break-all">Содержанки</h1>
           <div className="p-1">
@@ -114,12 +116,17 @@ export default function Home() {
                     return (
                       <div className="snap-start" key={`${se.id}-${episode.id}`}>
                         <div className="flex flex-col gap-y-3 justify-center items-center w-[60vw]">
-                          <div className="relative">
-                            <img
+                          <div className="relative w-full">
+                            <ImageWithSkeleton
                               src={`season/${se.id}/${episode.id}.webp`}
-                              className="rounded block w-full h-auto"
+                              className="rounded block w-full h-auto aspect-[333/188] object-cover object-center"
                               alt=""
                             />
+                            {/* <img
+                              src={`season/${se.id}/${episode.id}.webp`}
+                              className="rounded block w-full h-auto aspect-[333/188] object-cover object-center"
+                              alt=""
+                            /> */}
                             <span className="absolute w-full h-full top-0 left-0 bg-black/[0.35]"></span>
                             <span className="absolute text-white right-4 bottom-2 text-sm">{episode.duration}</span>
                             <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
