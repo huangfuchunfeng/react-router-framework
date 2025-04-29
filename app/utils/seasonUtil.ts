@@ -1,5 +1,15 @@
-export function getOpenEpisodeNum() {
-  return +(window.localStorage.getItem("open") || 0);
+export function getOpenEpisodeNum(initNum?: number) {
+  if (initNum) {
+    window.localStorage.setItem("open", "" + initNum);
+    return initNum;
+  }
+  return +(window.localStorage.getItem("open") || 1);
+}
+export function setOpenEpisodeNum(skip: number) {
+  window.addMonitor?.("setOpenEpisodeNum", {
+    open: skip,
+  });
+  window.localStorage.setItem("open", "" + skip);
 }
 export function getSeasonEpisodes(skip: number) {
   const size = 8;

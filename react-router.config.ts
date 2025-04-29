@@ -6,5 +6,5 @@ export default {
   ssr: false, // disable runtime server rendering
   prerender: true, // pre-render all static routes
   // basename needs to match the base in vite.config.ts for proper routing
-  // basename: "/react-router-framework",
+  basename: "/series-1/",
 } satisfies Config;
