@@ -34,12 +34,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return <Outlet />;
 }
+// export function HydrateFallback() {
+//   return <div> Loading... </div>;
+// }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let message = "Oops!";
   let details = "An unexpected error occurred.";
   let stack: string | undefined;
-
   if (isRouteErrorResponse(error)) {
     message = error.status === 404 ? "404" : "Error";
     details = error.status === 404 ? "The requested page could not be found." : error.statusText || details;

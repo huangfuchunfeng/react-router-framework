@@ -32,6 +32,7 @@ function addMonitor(event_type, data) {
     location.host.includes("localhost") ||
     location.search.includes("debugger=1")
   ) {
+    console.log("debugger", event_type, data);
     return;
   }
 
@@ -43,7 +44,7 @@ function startTracking() {
 function stopTracking() {
   const timeSpent = Date.now() - startTime;
   totalTime += timeSpent;
-  addMonitor("stay", "trackCustom", { stayTime: totalTime });
+  addMonitor("stay", { stayTime: totalTime });
 }
 function addEvent() {
   window.addEventListener("beforeunload", stopTracking);
