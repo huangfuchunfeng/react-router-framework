@@ -6,7 +6,7 @@ export default {
   ssr: false, // disable runtime server rendering
   // prerender: true, // pre-render all static routes
   async prerender() {
-    return ["/1", "/2"];
+    return ["/1", "/2", "/3"];
   },
   // basename needs to match the base in vite.config.ts for proper routing
   basename: "/series/",

@@ -1,0 +1,217 @@
+{
+  "id": 1,
+  "title": "Сквозь занавес лжи",
+  "description": "",
+  "cover": "cover.webp",
+  "tags": [],
+  "label": "",
+  "baseUrl": "https://comic.maores.com/series/2",
+  "season": [
+    {
+      "id": "s1",
+      "name": "",
+      "title": "",
+      "episodes": [
+        {
+          "id": "s1e1",
+          "openId": 1,
+          "duration": "",
+          "name": "",
+          "poster": "1.jpg",
+          "video": "1.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e2",
+          "openId": 2,
+          "duration": "",
+          "name": "",
+          "poster": "2.jpg",
+          "video": "2.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e3",
+          "openId": 3,
+          "duration": "",
+          "name": "",
+          "poster": "3.jpg",
+          "video": "3.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e4",
+          "openId": 4,
+          "duration": "",
+          "name": "",
+          "poster": "4.jpg",
+          "video": "4.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e5",
+          "openId": 5,
+          "duration": "",
+          "name": "",
+          "poster": "5.jpg",
+          "video": "5.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e6",
+          "openId": 6,
+          "duration": "",
+          "name": "",
+          "poster": "6.jpg",
+          "video": "6.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e7",
+          "openId": 7,
+          "duration": "",
+          "name": "",
+          "poster": "7.jpg",
+          "video": "7.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e8",
+          "openId": 8,
+          "duration": "",
+          "name": "",
+          "poster": "8.jpg",
+          "video": "8.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e9",
+          "openId": 9,
+          "duration": "",
+          "name": "",
+          "poster": "9.jpg",
+          "video": "9.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e10",
+          "openId": 10,
+          "duration": "",
+          "name": "",
+          "poster": "10.jpg",
+          "video": "10.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e11",
+          "openId": 11,
+          "duration": "",
+          "name": "",
+          "poster": "11.jpg",
+          "video": "11.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e12",
+          "openId": 12,
+          "duration": "",
+          "name": "",
+          "poster": "12.jpg",
+          "video": "12.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e13",
+          "openId": 13,
+          "duration": "",
+          "name": "",
+          "poster": "13.jpg",
+          "video": "13.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e14",
+          "openId": 14,
+          "duration": "",
+          "name": "",
+          "poster": "14.jpg",
+          "video": "14.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e15",
+          "openId": 15,
+          "duration": "",
+          "name": "",
+          "poster": "15.jpg",
+          "video": "15.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e16",
+          "openId": 16,
+          "duration": "",
+          "name": "",
+          "poster": "16.jpg",
+          "video": "16.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e17",
+          "openId": 17,
+          "duration": "",
+          "name": "",
+          "poster": "17.jpg",
+          "video": "17.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e18",
+          "openId": 18,
+          "duration": "",
+          "name": "",
+          "poster": "18.jpg",
+          "video": "18.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e19",
+          "openId": 19,
+          "duration": "",
+          "name": "",
+          "poster": "19.jpg",
+          "video": "19.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e20",
+          "openId": 20,
+          "duration": "",
+          "name": "",
+          "poster": "20.jpg",
+          "video": "20.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e21",
+          "openId": 21,
+          "duration": "",
+          "name": "",
+          "poster": "21.jpg",
+          "video": "21.mp4",
+          "description": ""
+        },
+        {
+          "id": "s1e22",
+          "openId": 22,
+          "duration": "",
+          "name": "",
+          "poster": "22.jpg",
+          "video": "22.mp4",
+          "description": ""
+        }
+      ],
+      "description": ""
+    }
+  ]
+}

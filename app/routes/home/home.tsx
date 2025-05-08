@@ -150,7 +150,7 @@ export default function Home({ loaderData }: { loaderData: SeriesInfo }) {
   }, []);
   return (
     <div className="bg-[#14161a] text-[#f2f2f2] min-h-screen  antialiased relative">
-      <header className="relative py-2 bg-black">
+      <header className="relative py-2 bg-black z-10">
         <video
           src={`${baseUrl}/${currentEpisode.video}`}
           className="w-screen h-[40vh]  object-contain"
@@ -160,8 +160,8 @@ export default function Home({ loaderData }: { loaderData: SeriesInfo }) {
           poster={`${baseUrl}/${currentEpisode.poster}`}
         ></video>
       </header>
-      <div className="p-6 ">
-        <main>
+      <div className="p-6 relative">
+        <main className="z-3 relative">
           <h1 className="mt-5 text-xl">{currentSeason.title}</h1>
           <h2 className="text-xl mt-2 mb-2">{label}</h2>
           <div className="flex flex-row gap-x-2">
@@ -170,7 +170,7 @@ export default function Home({ loaderData }: { loaderData: SeriesInfo }) {
                 <div
                   className={`font-bold py-2 px-5 rounded-lg whitespace-nowrap  ${
                     currentSeason.id === item.id ? "text-[#252930] bg-[#f2f2f2]" : "text-[#f2f2f2] bg-[#252930]"
-                  } `}
+                  }  ${item.name === "" ? "hidden" : ""}`}
                   onClick={() => changeSeason(item)}
                   key={item.id}
                 >
@@ -182,7 +182,7 @@ export default function Home({ loaderData }: { loaderData: SeriesInfo }) {
 
           <div
             ref={wrapper}
-            className="relative z-2 overflow-x-scroll snap-mandatory  snap-x scroll-smooth py-5 ep-wrapper"
+            className="relative overflow-x-scroll snap-mandatory  snap-x scroll-smooth py-5 ep-wrapper"
             style={{ WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}
           >
             <div className="flex flex-row gap-x-3">
@@ -234,13 +234,8 @@ export default function Home({ loaderData }: { loaderData: SeriesInfo }) {
             </div>
           )}
         </main>
-        <header className="relative flex flex-col justify-center items-center gap-y-6">
-          <img
-            src={`${baseUrl + "/" + cover}`}
-            className="blur-64 block h-full w-full absolute object-cover object-center z-0"
-            alt=""
-          />
-          <ImageWithSkeleton src={`${baseUrl + "/" + cover}`} className="block w-[50%] z-1 aspect-[30/43]" alt="" />
+        <header className="relative flex flex-col justify-center items-center gap-y-6 z-3">
+          <ImageWithSkeleton src={`${baseUrl + "/" + cover}`} className="block  z-1 " alt="" />
           <div className="z-1 text-center">
             <h1 className="line-clamp-6 text-3xl break-all"> {title}</h1>
           </div>
@@ -255,7 +250,13 @@ export default function Home({ loaderData }: { loaderData: SeriesInfo }) {
             })}
           </div>
         </header>
+        <img
+          src={`${baseUrl + "/" + cover}`}
+          className="blur-64 block h-full w-full absolute object-cover object-center z-0 top-0 left-0"
+          alt=""
+        />
       </div>
+
       <DialogComponent open={openModel} setOpen={setOpenModel} />
     </div>
   );
