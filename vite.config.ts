@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  base: "/series/",
+  base: "/series-h5/",
   plugins: [reactRouter(), tsconfigPaths(), tailwindcss()],
   server: {
     host: true,

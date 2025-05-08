@@ -9,5 +9,5 @@ export default {
     return ["/1", "/2", "/3"];
   },
   // basename needs to match the base in vite.config.ts for proper routing
-  basename: "/series/",
+  basename: "/series-h5/",
 } satisfies Config;
