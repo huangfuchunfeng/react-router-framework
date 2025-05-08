@@ -202,14 +202,14 @@ export default function Home({ loaderData }: { loaderData: SeriesInfo }) {
                         {episode.openId <= openId ? (
                           <div
                             onClick={() => playVideo(episode)}
-                            className="absolute w-full h-full top-0 left-0 flex justify-center items-center"
+                            className="absolute w-full h-full top-0 left-0 flex justify-start items-end p-3"
                           >
                             <img className="w-10 block" src="button-play.svg" alt="" />
                           </div>
                         ) : (
                           <div
                             onClick={() => lockVideo(episode)}
-                            className="absolute w-full h-full top-0 left-0 flex justify-center items-center"
+                            className="absolute w-full h-full top-0 left-0 flex justify-start items-end p-3"
                           >
                             {episode.openId === openId + 1 ? (
                               <img src="ad.svg" alt="" className="w-10 block" />
