@@ -7,7 +7,7 @@ import DialogComponent from "~/components/DialogComponent";
 
 export async function clientLoader({ params }: Route.ClientLoaderArgs) {
   try {
-    const res = await fetch(`./series-${params.seriesId}.json`);
+    const res = await fetch(`/series-h5/series-${params.seriesId}.json`);
     const seriesInfo = await res.json();
     if (!seriesInfo) {
       throw new Response("Not Found", { status: 404 });
@@ -204,7 +204,7 @@ export default function Home({ loaderData }: { loaderData: SeriesInfo }) {
                             onClick={() => playVideo(episode)}
                             className="absolute w-full h-full top-0 left-0 flex justify-start items-end p-3"
                           >
-                            <img className="w-10 block" src="button-play.svg" alt="" />
+                            <img className="w-10 block" src="/series-h5/button-play.svg" alt="" />
                           </div>
                         ) : (
                           <div
@@ -212,9 +212,9 @@ export default function Home({ loaderData }: { loaderData: SeriesInfo }) {
                             className="absolute w-full h-full top-0 left-0 flex justify-start items-end p-3"
                           >
                             {episode.openId === openId + 1 ? (
-                              <img src="ad.svg" alt="" className="w-10 block" />
+                              <img src="/series-h5/ad.svg" alt="" className="w-10 block" />
                             ) : (
-                              <img src="lock.svg" alt="" className="w-10 block" />
+                              <img src="/series-h5/lock.svg" alt="" className="w-10 block" />
                             )}
                           </div>
                         )}

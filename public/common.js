@@ -27,16 +27,20 @@ function fetchAddMonitor(event_type, data_json) {
   } catch (error) {}
 }
 function addMonitor(event_type, data) {
+  const id = location.pathname
+    .split("/")
+    .filter((item) => item)
+    .pop();
   if (
     location.host.includes("127.0.0.1") ||
     location.host.includes("localhost") ||
     location.search.includes("debugger=1")
   ) {
-    console.log("debugger", event_type, data);
+    console.log("debugger", event_type + "-series-" + id, data);
     return;
   }
 
-  fetchAddMonitor(event_type + "-series-1", data);
+  fetchAddMonitor(event_type + "-series-" + id, data);
 }
 function startTracking() {
   startTime = Date.now();
